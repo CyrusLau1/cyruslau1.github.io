@@ -1,0 +1,502 @@
+@media screen and (max-width: 412px) {
+  body * {
+    display: none !important;
+  }
+
+  body::before {
+    content: "Your screen is too narrow. \A \A Make the window wider or rotate your device to continue using the generator.";
+    display: block;
+    white-space: pre-wrap;
+    width: 100%;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 1.5em;
+  }
+}
+/* MOBILE */
+@media screen and (max-width: 767px) {
+  div#flex {
+    display: block;
+  }
+
+  div.expand::before {
+    width: calc(100vw - 60px);
+  }
+
+  div#image {
+    margin-bottom: 0px;
+  }
+
+  div#image-container {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+  }
+
+  div#buttons {
+    width: auto;
+    flex: 1;
+    align-items: center;
+    height: fit-content;
+  }
+
+  div#buttons button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  div#image {
+    --length: min(45vw, 720px, 60vh);
+    width: var(--length);
+    height: var(--length);
+  }
+
+  #image img {
+    width: var(--length);
+    height: var(--length);
+  }
+
+  .sticky {
+    position: sticky;
+    top: 0px;
+    background-color: #f5efe7;
+    padding: 2.5% 0 0.5% 0;
+    z-index: 1;
+  }
+
+}
+
+/*TABLET*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+
+}
+
+/*DESKTOP*/
+@media screen and (min-width: 1024px)
+{
+ #options {
+  
+ }
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  padding: 1% 3%;
+  background-color: #f5efe7;
+  max-width: 100vw;
+  box-sizing: border-box;
+  font-size: 12px;
+  justify-content: center;
+  -webkit-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 4em;
+  margin: 0 2% 0.5% 1%;
+  color: #533306;
+  line-height: 1.2em;
+  text-shadow: 0.5px 0 #463107;
+}
+
+.ml10 {
+  position: relative;
+  font-weight: 900;
+}
+
+.ml10 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml10 .letter {
+  display: inline-block;
+  line-height: 1em;
+  transform-origin: 0 0;
+}
+
+h2 {
+  font-size: 2em;
+  margin: 1% 0 0 3%;
+  color: #533306;
+  line-height: 1.2em;
+  text-shadow: 0.5px 0 #463107;
+}
+
+#image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+  margin: 2% 1% 10% 1%;
+  pointer-events: none;
+  overflow: hidden;
+  position: relative;
+}
+
+#image-container {
+  width: max(35vw, 201px);
+}
+
+
+#buttons {
+  text-align: center;
+  border-radius: 22px;
+  background-color: rgba(235, 229, 221, 1);
+  display: flex;
+  margin: 2% 2% 2% 2%;
+  flex-direction: column;
+  color: rgba(235, 229, 221, 1);
+  padding: 3% 2% 3% 2%;
+  box-shadow: inset 2px 2px 4px 1px #a7a39d8c;
+}
+
+img {
+  width: 100%;
+  position: absolute;
+}
+
+#flex {
+  display: flex;
+  justify-content: center;
+  gap: 4%;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  display: none;
+}
+
+#options {
+  border-radius: 22px;
+  background-color: rgba(235, 229, 221, 1);
+  display: flex;
+  margin: 2% 2% 2% 2%;
+  flex-direction: column;
+  color: rgba(235, 229, 221, 1);
+  padding: 3% 2% 3% 2%;
+  box-shadow: inset 2px 2px 4px 1px #a7a39d8c;
+  height: fit-content;
+  width: auto;
+}
+
+.expand {
+  max-height: 54.5px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: max-height 0.75s, border-radius 1s;
+  background-color: #c7b299;
+  border-radius: 28px;
+  border: 2px solid #675640;
+  cursor: pointer;
+}
+
+span.heading {
+  font-size: 1.6em;
+  font-weight: 600;
+  color: #fff8e8;
+  height: 54.5px;
+  box-sizing: border-box;
+  display: block;
+  background-color: #a9957d;
+  padding: 10px 20px;
+  transition: all 1s;
+}
+
+.expand::before {
+  content: "v";
+  position: absolute;
+  display: block;
+  color: #ebe5dd;
+  font-size: 1.6em;
+  text-align: right;
+  box-sizing: border-box;
+  font-weight: 600;
+  right: 15%;
+  line-height: 54.5px;
+}
+
+.expand:focus {
+  max-height: 777px;
+  border-radius: 28px;
+}
+
+#backgrounds:focus {
+  max-height: 442px;
+}
+
+.expand:focus::before {
+  content: "^";
+}
+
+.expand:hover span.heading,
+.expand:focus span.heading {
+  background-color: #a68b5b;
+}
+
+.button-container {
+  padding: 5px 10px;
+  text-align: center;
+  cursor: default;
+}
+
+.button-container input, .whole-container input {
+  appearance: none;
+  display: none;
+}
+
+#blue1 + label {
+  background-color: #5596f6;
+}
+
+#blue2 + label {
+  background-color: #2a7bf4;
+  color: #ebe5dd;
+}
+
+#blue3 + label {
+  background-color: #2a5ca7;
+  color: #ebe5dd;
+}
+
+#blue4 + label {
+  background-color: #7a8faf;
+  color: #ebe5dd;
+}
+
+#blue5 + label {
+  background-color: #002966;
+  color: #ebe5dd;
+}
+
+#blue6 + label {
+  background-color: #00193d;
+  color: #ebe5dd;
+}
+
+#green1 + label {
+  background-color: #9fd966;
+}
+
+#green2 + label {
+  background-color: #74bd29;
+  color: #ebe5dd;
+}
+
+#green3 + label {
+  background-color: #6a9440;
+  color: #ebe5dd;
+}
+
+#grey1 + label {
+  background-color: #cccccc;
+}
+
+#grey2 + label {
+  background-color: #666666;
+  color: #ebe5dd;
+}
+
+#grey3 + label {
+  background-color: #333333;
+  color: #ebe5dd;
+}
+
+#red1 + label {
+  background-color: #e85e23;
+  color: #ebe5dd;
+}
+
+#red2 + label {
+  background-color: #cb4c15;
+  color: #ebe5dd;
+}
+
+#red3 + label {
+  background-color: #9f370a;
+  color: #ebe5dd;
+}
+
+#yellow1 + label {
+  background-color: #fcd33f;
+}
+
+#yellow2 + label {
+  background-color: #e6b60d;
+  color: #ebe5dd;
+}
+
+#yellow3 + label {
+  background-color: #cf8e10;
+  color: #ebe5dd;
+}
+
+#white {
+  background-color: #ffffff;
+  display: inline-block;
+  padding: 5px 20px;
+  border: 2px solid #675640;
+  color: #675640;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 5px 0;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+#brown {
+  background-color: #b69578;
+  display: inline-block;
+  padding: 5px 20px;
+  border: 2px solid #675640;
+  color: #675640;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 5px 0;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.option {
+  display: inline-block;
+  padding: 5px 20px;
+  border: 2px solid #675640;
+  color: #675640;
+  background-color: #ebe5dd;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 5px 0;
+  text-align: center;
+}
+
+.option:hover,
+#white:hover,
+#brown:hover {
+  border-color: #523a17b7;
+  color: #dd8500 !important;
+  transition: 0.5s;
+}
+
+.background {
+  width: 58px;
+}
+
+input[type="radio"]:checked + .option {
+  background-color: #675640 !important;
+  color: #ebe5dd !important;
+}
+
+button {
+  background-color: #675640;
+  font-size: 1.7em;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  border-radius: 50px;
+  border: none;
+  color: #fff8e8;
+  padding: 2vh 1vw;
+  margin: 2%;
+}
+
+button:hover {
+  background-color: #c57702;
+  cursor: pointer;
+  transition: 1s;
+}
+
+#download-link,
+canvas {
+  display: none;
+}
+
+#info {
+  background-color: #f5efe7;
+  border: 4px solid #675640 !important;
+  color: #675640;
+  border-radius: 50% !important;
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #f5efe7;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #a9957d;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #a9957d;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.whole-container {
+  text-align: center;
+  padding: 0.5% 0 1% 0;
+}
+
+.category-rand {
+  align-self: center;
+  font-size: 1.2em;
+  display: inline-block;
+  padding: 2% 3%;
+  border: 2px solid #675640;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 5px 0;
+  text-align: center;
+}

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Alpaca Avatar Generator</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <button id="info">i</button>
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Some text in the Modal..</p>
+    </div>
+
+  </div>
+  <h1 class="ml10">
+    <span class="text-wrapper">
+      <span class="letters">ALPACA GENERATOR</span>
+    </span>
+  </h1>
+  <div id="flex">
+    <div class="sticky">
+      <div id="image-container">
+        <div id="image">
+          <image id="backgrounds" src="" />
+          <image id="ears" src="" />
+          <image id="neck" src="" />
+          <image id="nose" src="images/white/nose.png" />
+          <image id="mouth" src="" />
+          <image id="hair" src="" />
+          <image id="accessories" src="" />
+          <image id="eyes" src="" />
+          <image id="leg" src="" />
+        </div>
+        <div id="buttons">
+          <button onclick="random()" tabindex="0">Random 🎲</button>
+          <button onclick="download()" tabindex="0">Download 📂</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="customization">
+      <h2>ACCESSORIZE YOUR ALPACA'S 🦙</h2>
+      <div id="options">
+        <div class="expand" tabindex="0"> <span class="heading">Fur Color</span>
+          <div class="button-container">
+            <input type="radio" />
+            <label id="white" class="option fur" onclick="changeWhite()">White</label>
+            <input type="radio" />
+            <label id="brown" class="option fur" onclick="changeBrown()">Brown</label>
+          </div>
+        </div>
+        <div id="backgrounds" class="expand" tabindex="0"> <span class="heading">Background</span>
+          <div class="whole-container">
+            <div class="button-container">
+              <input type="radio" id="blue1" name="backgrounds" value="images/backgrounds/blue50.png" />
+              <label class="option backgrounds" for="blue1">Blue 1</label>
+              <input type="radio" id="blue2" name="backgrounds" value="images/backgrounds/blue60.png" checked />
+              <label class="option backgrounds" for="blue2">Blue 2</label>
+              <input type="radio" id="blue3" name="backgrounds" value="images/backgrounds/blue70.png" />
+              <label class="option backgrounds" for="blue3">Blue 3</label>
+              <input type="radio" id="blue4" name="backgrounds" value="images/backgrounds/darkblue30.png" />
+              <label class="option backgrounds" for="blue4">Blue 4</label>
+              <input type="radio" id="blue5" name="backgrounds" value="images/backgrounds/darkblue50.png" />
+              <label class="option backgrounds" for="blue5">Blue 5</label>
+              <input type="radio" id="blue6" name="backgrounds" value="images/backgrounds/darkblue70.png" />
+              <label class="option backgrounds" for="blue6">Blue 6</label>
+              <input type="radio" id="green1" name="backgrounds" value="images/backgrounds/green50.png" />
+              <label class="option backgrounds" for="green1">Green 1</label>
+              <input type="radio" id="green2" name="backgrounds" value="images/backgrounds/green60.png" />
+              <label class="option backgrounds" for="green2">Green 2</label>
+              <input type="radio" id="green3" name="backgrounds" value="images/backgrounds/green70.png" />
+              <label class="option backgrounds" for="green3">Green 3</label>
+              <input type="radio" id="grey1" name="backgrounds" value="images/backgrounds/grey40.png" />
+              <label class="option backgrounds" for="grey1">Grey 1</label>
+              <input type="radio" id="grey2" name="backgrounds" value="images/backgrounds/grey70.png" />
+              <label class="option backgrounds" for="grey2">Grey 2</label>
+              <input type="radio" id="grey3" name="backgrounds" value="images/backgrounds/grey80.png" />
+              <label class="option backgrounds" for="grey3">Grey 3</label>
+              <input type="radio" id="red1" name="backgrounds" value="images/backgrounds/red50.png" />
+              <label class="option backgrounds" for="red1">Red 1</label>
+              <input type="radio" id="red2" name="backgrounds" value="images/backgrounds/red60.png" />
+              <label class="option backgrounds" for="red2">Red 2</label>
+              <input type="radio" id="red3" name="backgrounds" value="images/backgrounds/red70.png" />
+              <label class="option backgrounds" for="red3">Red 3</label>
+              <input type="radio" id="yellow1" name="backgrounds" value="images/backgrounds/yellow50.png" />
+              <label class="option backgrounds" for="yellow1">Yellow 1</label>
+              <input type="radio" id="yellow2" name="backgrounds" value="images/backgrounds/yellow60.png" />
+              <label class="option backgrounds" for="yellow2">Yellow 2</label>
+              <input type="radio" id="yellow3" name="backgrounds" value="images/backgrounds/yellow70.png" />
+              <label class="option backgrounds" for="yellow3">Yellow 3</label>
+            </div>
+            <input type="radio" />
+            <label class="option" onclick="random_c(backgrounds)">Random 🎲</label>
+          </div>
+        </div>
+        <div id="neck" class="expand" tabindex="0"> <span class="heading">Neck</span>
+          <div class="whole-container">
+            <div class="button-container">
+              <input type="radio" id="default-neck" name="neck" value="images/white/neck/default.png" checked />
+              <label class="option neck" for="default-neck">Default</label>
+              <input type="radio" id="bend-backward" name="neck" value="images/white/neck/bend-backward.png" />
+              <label class="option neck" for="bend-backward">Bend backward</label>
+              <input type="radio" id="bend-forward" name="neck" value="images/white/neck/bend-forward.png" />
+              <label class="option neck" for="bend-forward">Bend forward</label>
+              <input type="radio" id="thick" name="neck" value="images/white/neck/thick.png" />
+              <label class="option neck" for="thick">Thick</label>
+            </div>
+            <input type="radio" />
+            <label class="option" onclick="random_c(neck)">Random 🎲</label>
+          </div>
+        </div>
+
+        <div id="mouth" class="expand" tabindex="0"> <span class="heading">Mouth</span>
+          <div class="whole-container">
+            <div class="button-container">
+              <input type="radio" id="defaultmouth" name="mouth" value="images/white/mouth/default.png" checked />
+              <label class="option mouth" for="defaultmouth">Default</label>
+              <input type="radio" id="astonished" name="mouth" value="images/white/mouth/astonished.png" />
+              <label class="option mouth" for="astonished">Astonished</label>
+              <input type="radio" id="eating" name="mouth" value="images/white/mouth/eating.png" />
+              <label class="option mouth" for="eating">Eating</label>
+              <input type="radio" id="laugh" name="mouth" value="images/white/mouth/laugh.png" />
+              <label class="option mouth" for="laugh">Laugh</label>
+              <input type="radio" id="tongue" name="mouth" value="images/white/mouth/tongue.png" />
+              <label class="option mouth" for="tongue">Tongue</label>
+            </div>
+            <input type="radio" />
+            <label class="option" onclick="random_c(mouth)">Random 🎲</label>
+          </div>
+        </div>
+        <div id="ears" class="expand" tabindex="0"> <span class="heading">Ears</span>
+          <div class="whole-container">
+            <div class="button-container">
+              <input type="radio" id="default-ears" name="ears" value="images/white/ears/default.png" checked />
+              <label class="option ears" for="default-ears">Default</label>
+              <input type="radio" id="tilt-backward-ears" name="ears" value="images/white/ears/tilt-backward.png" />
+              <label class="option ears" for="tilt-backward-ears">Tilt backward</label>
+              <input type="radio" id="tilt-forward-ears" name="ears" value="images/white/ears/tilt-forward.png" />
+              <label class="option ears" for="tilt-forward-ears">Tilt forward</label>
+            </div>
+            <input type="radio" />
+            <label class="option" onclick="random_c(ears)">Random 🎲</label>
+          </div>
+        </div>
+        <div id="hair" class="expand" tabindex="0"> <span class="heading">Hair</span>
+          <div class="whole-container">
+            <div class="button-container">
+              <input type="radio" id="default-hair" name="hair" value="images/white/hair/default.png" checked />
+              <label class="option hair" for="default-hair">Default</label>
+              <input type="radio" id="bangs" name="hair" value="images/white/hair/bangs.png" />
+              <label class="option hair" for="bangs">Bangs</label>
+              <input type="radio" id="curls" name="hair" value="images/white/hair/curls.png" />
+              <label class="option hair" for="curls">Curls</label>
+              <input type="radio" id="elegant" name="hair" value="images/white/hair/elegant.png" />
+              <label class="option hair" for="elegant">Elegant</label>
+              <input type="radio" id="fancy" name="hair" value="images/white/hair/fancy.png" />
+              <label class="option hair" for="fancy">Fancy</label>
+              <input type="radio" id="quiff" name="hair" value="images/white/hair/quiff.png" />
+              <label class="option hair" for="quiff">Quiff</label>
+              <input type="radio" id="short" name="hair" value="images/white/hair/short.png" />
+              <label class="option hair" for="short">Short</label>
+            </div>
+            <input type="radio" />
+            <label class="option" onclick="random_c(hair)">Random 🎲</label>
+          </div>
+        </div>
+        <div id="eyes" class="expand" tabindex="0"> <span class="heading">Eyes</span>
+          <div class="whole-container">
+            <div class="button-container">
+              <input type="radio" id="default-eyes" name="eyes" value="images/eyes/default.png" checked />
+              <label class="option eyes" for="default-eyes">Default</label>
+              <input type="radio" id="angry" name="eyes" value="images/eyes/angry.png" />
+              <label class="option eyes" for="angry">Angry</label>
+              <input type="radio" id="heart" name="eyes" value="images/eyes/heart.png" />
+              <label class="option eyes" for="heart">Heart</label>
+              <input type="radio" id="naughty" name="eyes" value="images/eyes/naughty.png" />
+              <label class="option eyes" for="naughty">Naughty</label>
+              <input type="radio" id="panda" name="eyes" value="images/eyes/panda.png" />
+              <label class="option eyes" for="panda">Panda</label>
+              <input type="radio" id="smart" name="eyes" value="images/eyes/smart.png" />
+              <label class="option eyes" for="smart">Smart</label>
+              <input type="radio" id="spiral" name="eyes" value="images/eyes/spiral.png" />
+              <label class="option eyes" for="spiral">Spiral</label>
+              <input type="radio" id="star" name="eyes" value="images/eyes/star.png" />
+              <label class="option eyes" for="star">Star</label>
+            </div>
+            <input type="radio" />
+            <label class="option" onclick="random_c(eyes)">Random 🎲</label>
+          </div>
+        </div>
+        <div id="leg" class="expand" tabindex="0"> <span class="heading">Leg</span>
+          <div class="whole-container">
+            <div class="button-container">
+              <input type="radio" id="default-leg" name="leg" value="images/white/leg/default.png" checked />
+              <label class="option leg" for="default-leg">Default</label>
+              <input type="radio" id="book" name="leg" value="images/white/leg/book.png" />
+              <label class="option leg" for="book">Book</label>
+              <input type="radio" id="bubble-tea" name="leg" value="images/white/leg/bubble-tea.png" />
+              <label class="option leg" for="bubble-tea">Bubble tea</label>
+              <input type="radio" id="cookie" name="leg" value="images/white/leg/cookie.png" />
+              <label class="option leg" for="cookie">Cookie</label>
+              <input type="radio" id="coffee" name="leg" value="images/white/leg/coffee.png" />
+              <label class="option leg" for="coffee">Coffee</label>
+              <input type="radio" id="game-console" name="leg" value="images/white/leg/game-console.png" />
+              <label class="option leg" for="game-console">Game console</label>
+              <input type="radio" id="icecream" name="leg" value="images/white/leg/icecream.png" />
+              <label class="option leg" for="icecream">Ice cream</label>
+              <input type="radio" id="pizza" name="leg" value="images/white/leg/pizza.png" />
+              <label class="option leg" for="pizza">Pizza</label>
+              <input type="radio" id="tilt-backward-leg" name="leg" value="images/white/leg/tilt-backward.png" />
+              <label class="option leg" for="tilt-backward-leg">Tilt backward</label>
+              <input type="radio" id="tilt-forward-leg" name="leg" value="images/white/leg/tilt-forward.png" />
+              <label class="option leg" for="tilt-forward-leg">Tilt forward</label>
+            </div>
+            <input type="radio" />
+            <label class="option" onclick="random_c(leg)">Random 🎲</label>
+          </div>
+        </div>
+        <div id="accessories" class="expand" tabindex="0"> <span class="heading">Accessories</span>
+          <div class="whole-container">
+            <div class="button-container">
+              <input type="radio" id="bowtie" name="accessories" value="images/accessories/bowtie.png" />
+              <label class="option accessories" for="bowtie">Bowtie</label>
+              <input type="radio" id="crown" name="accessories" value="images/accessories/crown.png" />
+              <label class="option accessories" for="crown">Crown</label>
+              <input type="radio" id="earings" name="accessories" value="images/accessories/earings.png" />
+              <label class="option accessories" for="earings">Earings</label>
+              <input type="radio" id="flower" name="accessories" value="images/accessories/flower.png" />
+              <label class="option accessories" for="flower">Flower</label>
+              <input type="radio" id="glasses" name="accessories" value="images/accessories/glasses.png" />
+              <label class="option accessories" for="glasses">Glasses</label>
+              <input type="radio" id="headphones" name="accessories" value="images/accessories/headphones.png" />
+              <label class="option accessories" for="headphones">Headphones</label>
+              <input type="radio" id="none" name="accessories" value="images/accessories/none.png" checked />
+              <label class="option accessories" for="none">None</label>
+              <input type="radio" id="partyhat" name="accessories" value="images/accessories/partyhat.png" />
+              <label class="option accessories" for="partyhat">Party hat</label>
+              <input type="radio" id="scarf" name="accessories" value="images/accessories/scarf.png" />
+              <label class="option accessories" for="scarf">Scarf</label>
+              <input type="radio" id="tophat" name="accessories" value="images/accessories/tophat.png" />
+              <label class="option accessories" for="tophat">Top hat</label>
+              
+              
+              
+            </div>
+            <input type="radio" />
+            <label class="option" onclick="random_c(accessories)">Random 🎲</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+</html>
