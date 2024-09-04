@@ -53,10 +53,8 @@ function download() {
 }
 
 function changeBrown() {
-  // Select all img elements
   const images = document.querySelectorAll('img');
 
-  // Loop through all images and change the source if it contains 'images/white'
   images.forEach(img => {
     if (img.src.includes('images/white')) {
       img.src = img.src.replace('images/white', 'images/brown');
@@ -67,10 +65,8 @@ function changeBrown() {
 }
 
 function changeWhite() {
-  // Select all img elements
   const images = document.querySelectorAll('img');
 
-  // Loop through all images and change the source if it contains 'images/white'
   images.forEach(img => {
     if (img.src.includes('images/brown')) {
       img.src = img.src.replace('images/brown', 'images/white');
@@ -81,46 +77,50 @@ function changeWhite() {
 }
 
 
-random();
+function onload() {
+  radios.forEach(radio => {
+    if (radio.checked) {
+      radio.click();
+    }
+  });
+}
+
 
 document.addEventListener("DOMContentLoaded", function () {
   animation();
+  onload();
+
 });
 
 function animation() {
-  // Wrap every letter in a span
-  var textWrapper = document.querySelector('.ml10 .letters');
+  var textWrapper = document.querySelector('.letters');
   textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
   anime.timeline({ loop: false })
     .add({
-      targets: '.ml10 .letter',
-      rotateY: [-90, 0],
-      duration: 5000,
-      delay: (el, i) => 45 * i
-    });
+      targets: '.letter',
+      scale: [0, 1.05],
+      duration: 7000,
+      elasticity: 750,
+      delay: (el, i) => 250 * (i + 1)
+    })
 }
 
-// Get the modal
 var modal = document.getElementById("myModal");
 
-// Get the button that opens the modal
 var btn = document.getElementById("info");
 
-// Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on the button, open the modal
 btn.onclick = function () {
   modal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
+
 span.onclick = function () {
   modal.style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
@@ -171,43 +171,43 @@ function random_c(category) {
   else if (category === hair) {
     let categories = ["hair"];
     for (let x of categories) {
-        let list = document.querySelectorAll("input[type='radio'][name='" + x + "']");
-        console.log(list);
-        let randnum = Math.floor(Math.random() * list.length);
-        list[randnum].checked = true;
-        list[randnum].click();
+      let list = document.querySelectorAll("input[type='radio'][name='" + x + "']");
+      console.log(list);
+      let randnum = Math.floor(Math.random() * list.length);
+      list[randnum].checked = true;
+      list[randnum].click();
     }
+  }
+  else if (category === eyes) {
+    let categories = ["eyes"];
+    for (let x of categories) {
+      let list = document.querySelectorAll("input[type='radio'][name='" + x + "']");
+      console.log(list);
+      let randnum = Math.floor(Math.random() * list.length);
+      list[randnum].checked = true;
+      list[randnum].click();
     }
-    else if (category === eyes) {
-      let categories = ["eyes"];
-      for (let x of categories) {
-          let list = document.querySelectorAll("input[type='radio'][name='" + x + "']");
-          console.log(list);
-          let randnum = Math.floor(Math.random() * list.length);
-          list[randnum].checked = true;
-          list[randnum].click();
-      }
-      }
-      else if (category === leg) {
-        let categories = ["leg"];
-        for (let x of categories) {
-            let list = document.querySelectorAll("input[type='radio'][name='" + x + "']");
-            console.log(list);
-            let randnum = Math.floor(Math.random() * list.length);
-            list[randnum].checked = true;
-            list[randnum].click();
-        }
-        }
-        else if (category === accessories) {
-          let categories = ["accessories"];
-          for (let x of categories) {
-              let list = document.querySelectorAll("input[type='radio'][name='" + x + "']");
-              console.log(list);
-              let randnum = Math.floor(Math.random() * list.length);
-              list[randnum].checked = true;
-              list[randnum].click();
-          }
-          }
+  }
+  else if (category === leg) {
+    let categories = ["leg"];
+    for (let x of categories) {
+      let list = document.querySelectorAll("input[type='radio'][name='" + x + "']");
+      console.log(list);
+      let randnum = Math.floor(Math.random() * list.length);
+      list[randnum].checked = true;
+      list[randnum].click();
+    }
+  }
+  else if (category === accessories) {
+    let categories = ["accessories"];
+    for (let x of categories) {
+      let list = document.querySelectorAll("input[type='radio'][name='" + x + "']");
+      console.log(list);
+      let randnum = Math.floor(Math.random() * list.length);
+      list[randnum].checked = true;
+      list[randnum].click();
+    }
+  }
 
 
   const color = localStorage.getItem('alpacaColor');
@@ -218,4 +218,57 @@ function random_c(category) {
     changeWhite();
   }
 }
+
+
+var coll = document.getElementsByClassName("heading");
+var i;
+var activeDropdown = null;
+var activeHeading = null;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function (event) {
+
+    if (activeHeading && activeHeading !== this) {
+      activeHeading.classList.remove("active");
+    }
+
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+
+    if (content.style.display === "block") {
+      content.style.display = "none";
+      activeDropdown = null;
+    } else {
+      if (activeDropdown) {
+        activeDropdown.style.display = "none";
+      }
+      content.style.display = "block";
+      activeDropdown = content;
+    }
+
+    activeHeading = this;
+
+    event.stopPropagation();
+  });
+}
+
+window.addEventListener("click", function (event) {
+  if (activeDropdown) {
+    var container = activeDropdown.parentElement;
+    if (!container.contains(event.target)) {
+      activeDropdown.style.display = "none";
+      activeDropdown = null;
+
+      if (activeHeading) {
+        activeHeading.classList.remove("active");
+        activeHeading = null;
+      }
+    }
+  }
+});
+
+if (window.history.replaceState) {
+  window.history.replaceState(null, null, window.location.href);
+}
+
 

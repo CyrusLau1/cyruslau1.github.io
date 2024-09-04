@@ -1,32 +1,46 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <title>Alpaca Avatar Generator</title>
   <link rel="stylesheet" href="styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+  <meta name="description" content="Alpaca Avatar Generator">
+  <meta name="keywords" content="alpaca, avatar, generator">
+  <meta name="author" content="Cyrus Lau">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Permanent+Marker&display=swap"
+    rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/c88ed0bc51.js" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/x-icon" href="images/favicon.png">
 </head>
 
 <body>
-  <button id="info">i</button>
+  <button id="info"><i class="fa-regular fa-comment-dots fa-beat"
+      style="--fa-animation-duration: 1s; --fa-beat-scale: 0.55;"></i></i></i></button>
   <div id="myModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <p>Some text in the Modal..</p>
+      <h2>Leave some feedback! &nbsp;<i class="fa-solid fa-file-pen"></i></h2>
+      <iframe width="640px" height="480px" src="https://forms.office.com/r/9B4qRxU3rw?embed=true" frameborder="0"
+        marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen
+        webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+      <div id="feedback-message"></div>
     </div>
-
   </div>
+
   <h1 class="ml10">
     <span class="text-wrapper">
       <span class="letters">ALPACA GENERATOR</span>
     </span>
   </h1>
-  <div id="flex">
+
+
+  <div id="preview">
     <div class="sticky">
       <div id="image-container">
         <div id="image">
@@ -41,16 +55,20 @@
           <image id="leg" src="" />
         </div>
         <div id="buttons">
-          <button onclick="random()" tabindex="0">Random 🎲</button>
-          <button onclick="download()" tabindex="0">Download 📂</button>
+          <button id="random" onclick="random()" tabindex="0"><i class="fa-solid fa-dice fa-shake"
+              style="--fa-animation-duration: 7s;"></i>&nbsp; Random</button>
+          <button id="download" onclick="download()" tabindex="0"><i class="fa-solid fa-download fa-bounce"
+              style="--fa-animation-duration: 7s; --fa-bounce-start-scale-x: 1; --fa-bounce-start-scale-y: 1; --fa-bounce-jump-scale-x: 1; --fa-bounce-jump-scale-y: 1; --fa-bounce-land-scale-x: 1; --fa-bounce-land-scale-y: 1;"></i>&nbsp;
+            Download</button>
         </div>
       </div>
     </div>
 
     <div class="customization">
-      <h2>ACCESSORIZE YOUR ALPACA'S 🦙</h2>
+      <h2>ACCESSORIZE YOUR ALPACA'S <i class="fa-solid fa-paw"></i></h2>
       <div id="options">
-        <div class="expand" tabindex="0"> <span class="heading">Fur Color</span>
+        <button class="heading"><i class="fa-solid fa-feather"></i>&nbsp; Fur Color</button>
+        <div class="expand" tabindex="0">
           <div class="button-container">
             <input type="radio" />
             <label id="white" class="option fur" onclick="changeWhite()">White</label>
@@ -58,12 +76,13 @@
             <label id="brown" class="option fur" onclick="changeBrown()">Brown</label>
           </div>
         </div>
-        <div id="backgrounds" class="expand" tabindex="0"> <span class="heading">Background</span>
+        <button class="heading"><i class="fa-solid fa-palette"></i>&nbsp; Background</button>
+        <div id="backgrounds" class="expand" tabindex="0">
           <div class="whole-container">
             <div class="button-container">
               <input type="radio" id="blue1" name="backgrounds" value="images/backgrounds/blue50.png" />
               <label class="option backgrounds" for="blue1">Blue 1</label>
-              <input type="radio" id="blue2" name="backgrounds" value="images/backgrounds/blue60.png" checked />
+              <input type="radio" id="blue2" name="backgrounds" value="images/backgrounds/blue60.png" />
               <label class="option backgrounds" for="blue2">Blue 2</label>
               <input type="radio" id="blue3" name="backgrounds" value="images/backgrounds/blue70.png" />
               <label class="option backgrounds" for="blue3">Blue 3</label>
@@ -73,7 +92,7 @@
               <label class="option backgrounds" for="blue5">Blue 5</label>
               <input type="radio" id="blue6" name="backgrounds" value="images/backgrounds/darkblue70.png" />
               <label class="option backgrounds" for="blue6">Blue 6</label>
-              <input type="radio" id="green1" name="backgrounds" value="images/backgrounds/green50.png" />
+              <input type="radio" id="green1" name="backgrounds" value="images/backgrounds/green50.png" checked />
               <label class="option backgrounds" for="green1">Green 1</label>
               <input type="radio" id="green2" name="backgrounds" value="images/backgrounds/green60.png" />
               <label class="option backgrounds" for="green2">Green 2</label>
@@ -99,10 +118,12 @@
               <label class="option backgrounds" for="yellow3">Yellow 3</label>
             </div>
             <input type="radio" />
-            <label class="option" onclick="random_c(backgrounds)">Random 🎲</label>
+            <label class="option" onclick="random_c(backgrounds)"><i class="fa-solid fa-dice-six"></i>&nbsp;
+              Random</label>
           </div>
         </div>
-        <div id="neck" class="expand" tabindex="0"> <span class="heading">Neck</span>
+        <button class="heading"><i class="fa-brands fa-black-tie"></i>&nbsp; Neck</button>
+        <div id="neck" class="expand" tabindex="0">
           <div class="whole-container">
             <div class="button-container">
               <input type="radio" id="default-neck" name="neck" value="images/white/neck/default.png" checked />
@@ -115,11 +136,12 @@
               <label class="option neck" for="thick">Thick</label>
             </div>
             <input type="radio" />
-            <label class="option" onclick="random_c(neck)">Random 🎲</label>
+            <label class="option" onclick="random_c(neck)"><i class="fa-solid fa-dice-four"></i>&nbsp; Random</label>
           </div>
         </div>
 
-        <div id="mouth" class="expand" tabindex="0"> <span class="heading">Mouth</span>
+        <button class="heading"><i class="fa-solid fa-teeth-open"></i>&nbsp; Mouth</button>
+        <div id="mouth" class="expand" tabindex="0">
           <div class="whole-container">
             <div class="button-container">
               <input type="radio" id="defaultmouth" name="mouth" value="images/white/mouth/default.png" checked />
@@ -134,10 +156,12 @@
               <label class="option mouth" for="tongue">Tongue</label>
             </div>
             <input type="radio" />
-            <label class="option" onclick="random_c(mouth)">Random 🎲</label>
+            <label class="option" onclick="random_c(mouth)"><i class="fa-solid fa-dice-five"></i>&nbsp; Random</label>
           </div>
         </div>
-        <div id="ears" class="expand" tabindex="0"> <span class="heading">Ears</span>
+
+        <button class="heading"><i class="fa-solid fa-ear-listen"></i>&nbsp; Ears</button>
+        <div id="ears" class="expand" tabindex="0">
           <div class="whole-container">
             <div class="button-container">
               <input type="radio" id="default-ears" name="ears" value="images/white/ears/default.png" checked />
@@ -148,10 +172,12 @@
               <label class="option ears" for="tilt-forward-ears">Tilt forward</label>
             </div>
             <input type="radio" />
-            <label class="option" onclick="random_c(ears)">Random 🎲</label>
+            <label class="option" onclick="random_c(ears)"><i class="fa-solid fa-dice-three"></i>&nbsp; Random</label>
           </div>
         </div>
-        <div id="hair" class="expand" tabindex="0"> <span class="heading">Hair</span>
+
+        <button class="heading"><i class="fas fa-cut"></i>&nbsp; Hair</button>
+        <div id="hair" class="expand" tabindex="0">
           <div class="whole-container">
             <div class="button-container">
               <input type="radio" id="default-hair" name="hair" value="images/white/hair/default.png" checked />
@@ -170,10 +196,11 @@
               <label class="option hair" for="short">Short</label>
             </div>
             <input type="radio" />
-            <label class="option" onclick="random_c(hair)">Random 🎲</label>
+            <label class="option" onclick="random_c(hair)"><i class="fa-solid fa-dice-six"></i>&nbsp; Random</label>
           </div>
         </div>
-        <div id="eyes" class="expand" tabindex="0"> <span class="heading">Eyes</span>
+        <button class="heading"><i class="fa-regular fa-eye"></i>&nbsp; Eyes</button>
+        <div id="eyes" class="expand" tabindex="0">
           <div class="whole-container">
             <div class="button-container">
               <input type="radio" id="default-eyes" name="eyes" value="images/eyes/default.png" checked />
@@ -194,10 +221,11 @@
               <label class="option eyes" for="star">Star</label>
             </div>
             <input type="radio" />
-            <label class="option" onclick="random_c(eyes)">Random 🎲</label>
+            <label class="option" onclick="random_c(eyes)"><i class="fa-solid fa-dice-six"></i>&nbsp; Random</label>
           </div>
         </div>
-        <div id="leg" class="expand" tabindex="0"> <span class="heading">Leg</span>
+        <button class="heading"><i class="fa-solid fa-shoe-prints"></i>&nbsp; Leg</button>
+        <div id="leg" class="expand" tabindex="0">
           <div class="whole-container">
             <div class="button-container">
               <input type="radio" id="default-leg" name="leg" value="images/white/leg/default.png" checked />
@@ -222,12 +250,16 @@
               <label class="option leg" for="tilt-forward-leg">Tilt forward</label>
             </div>
             <input type="radio" />
-            <label class="option" onclick="random_c(leg)">Random 🎲</label>
+            <label class="option" onclick="random_c(leg)"><i class="fa-solid fa-dice-six"></i>&nbsp; Random</label>
           </div>
         </div>
-        <div id="accessories" class="expand" tabindex="0"> <span class="heading">Accessories</span>
+
+        <button class="heading"><i class="fa-duotone fa-solid fa-hat-wizard"></i>&nbsp; Accessories</button>
+        <div id="accessories" class="expand" tabindex="0">
           <div class="whole-container">
             <div class="button-container">
+              <input type="radio" id="none" name="accessories" value="images/accessories/none.png" checked />
+              <label class="option accessories" for="none">None</label>
               <input type="radio" id="bowtie" name="accessories" value="images/accessories/bowtie.png" />
               <label class="option accessories" for="bowtie">Bowtie</label>
               <input type="radio" id="crown" name="accessories" value="images/accessories/crown.png" />
@@ -240,26 +272,23 @@
               <label class="option accessories" for="glasses">Glasses</label>
               <input type="radio" id="headphones" name="accessories" value="images/accessories/headphones.png" />
               <label class="option accessories" for="headphones">Headphones</label>
-              <input type="radio" id="none" name="accessories" value="images/accessories/none.png" checked />
-              <label class="option accessories" for="none">None</label>
               <input type="radio" id="partyhat" name="accessories" value="images/accessories/partyhat.png" />
               <label class="option accessories" for="partyhat">Party hat</label>
               <input type="radio" id="scarf" name="accessories" value="images/accessories/scarf.png" />
               <label class="option accessories" for="scarf">Scarf</label>
               <input type="radio" id="tophat" name="accessories" value="images/accessories/tophat.png" />
               <label class="option accessories" for="tophat">Top hat</label>
-              
-              
-              
+
+
+
             </div>
             <input type="radio" />
-            <label class="option" onclick="random_c(accessories)">Random 🎲</label>
+            <label class="option" onclick="random_c(accessories)"><i class="fa-solid fa-dice-six"></i>&nbsp;
+              Random</label>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  </div>
   </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
