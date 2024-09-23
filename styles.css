@@ -216,6 +216,10 @@ body {
   margin-bottom: 8px;
 }
 
+.disable-doubletap-to-zoom {
+  touch-action: none;
+}
+
 h1 {
   font-family: "Permanent Marker", sans-serif;
   margin: 0 10% 0.5% 1%;
