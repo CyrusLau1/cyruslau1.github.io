@@ -108,7 +108,7 @@ function animation() {
 
 var modal = document.getElementById("myModal");
 
-var btn = document.getElementById("info");
+var btn = document.getElementById("feedback");
 
 var span = document.getElementsByClassName("close")[0];
 
