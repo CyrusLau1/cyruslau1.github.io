@@ -338,6 +338,7 @@ button.heading:first-child {
   text-align: center;
   font-size: 1.2em;
   transition: 0.25s;
+  touch-action: manipulation;
 }
 
 .option:hover,
@@ -491,7 +492,7 @@ canvas {
 /* MOBILE */
 @media screen and (max-width: 767px) {
   h1 {
-    font-size: 7.2vw !important;
+    font-size: 7vw !important;
     margin-top: 2% !important;
   }
 
