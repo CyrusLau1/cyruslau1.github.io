@@ -1,184 +1,3 @@
-@media screen and (max-width: 412px) {
-  body * {
-    display: none !important;
-  }
-
-  body::before {
-    content: "Your screen is too narrow. \A \A Make the window wider or rotate your device to continue using the generator.";
-    display: block;
-    white-space: pre-wrap;
-    width: 100%;
-    text-align: center;
-    margin-top: 100px;
-    font-size: 1.5em;
-  }
-}
-/* MOBILE */
-@media screen and (max-width: 767px) {
-  h1 {
-    font-size: 7.5vw;
-    margin-top: 2% !important;
-  }
-
-  h2 {
-    font-size: 1.8em;
-  }
-
-  div#preview {
-    display: block;
-  }
-
-  div.expand::before {
-    width: calc(100vw - 60px);
-  }
-
-  div#image {
-    margin-bottom: 0px;
-  }
-
-  div#image-container {
-    margin-bottom: 20px;
-    display: flex;
-    gap: 10px;
-    width: 100%;
-  }
-
-  div#buttons {
-    width: auto;
-    flex: 1;
-    align-items: center;
-    height: fit-content;
-  }
-
-  div#buttons button {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
-  }
-
-  div#image {
-    --length: min(45vw, 720px, 60vh);
-    width: var(--length);
-    height: var(--length);
-  }
-
-  #image img {
-    width: var(--length);
-    height: var(--length);
-  }
-
-  .sticky {
-    position: sticky;
-    top: 0px;
-    background-color: #f5efe7;
-    padding: 2.5% 0 0.5% 0;
-    z-index: 1;
-  }
-
-  button.heading {
-    height: 57px;
-    margin-bottom: 1.5% !important;
-  }
-
-  .option {
-    padding: 9px 25px !important;
-  }
-
-  #random,
-  #download {
-    background-color: #675640;
-  }
-}
-
-/*TABLET*/
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  h1 {
-    font-size: 4em;
-  }
-
-  h2 {
-    font-size: 2.2em;
-  }
-
-  #options {
-    overflow-y: auto;
-    display: flex;
-    position: relative;
-    height: fit-content;
-    max-height: 60vh;
-    width: 50vw;
-    background-color: rgba(235, 229, 221, 1);
-    box-shadow: inset 1px 1px 1px 1px #c7bfb38c;
-  }
-
-  .expand::before {
-    right: 10% !important;
-  }
-
-  #random,
-  #download {
-    background-color: #3e2627;
-  }
-
-  button.heading {
-    height: 56px;
-    margin-bottom: 1% !important;
-  }
-
-  .option {
-    padding: 7px 23px !important;
-  }
-}
-
-/*DESKTOP*/
-@media screen and (min-width: 1024px) {
-  body {
-    padding: 1% 5% !important;
-    max-height: 100vh;
-    overflow: auto;
-  }
-
-  h1 {
-    font-size: 4em;
-  }
-
-  h2 {
-    font-size: 2.5em;
-  }
-
-  #options {
-    overflow-y: auto;
-    display: flex;
-    position: relative;
-    height: fit-content;
-    max-height: 60vh;
-    width: 50vw;
-    background-color: rgba(235, 229, 221, 1);
-    box-shadow: inset 1px 1px 1px 1px #c7bfb38c;
-  }
-
-  .expand {
-    max-height: none;
-  }
-
-  .heading::before {
-    right: 5% !important;
-  }
-
-  #image-container {
-    width: max(26vw, 100px) !important;
-  }
-
-  #random,
-  #download {
-    background-color: #5a4436;
-  }
-
-  button.heading {
-    height: 55px;
-  }
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -218,7 +37,7 @@ body {
 
 h1 {
   font-family: "Permanent Marker", sans-serif;
-  margin: 0 10% 0.5% 1%;
+  margin: 0 12% 0.5% 1%;
   color: #533306;
   line-height: 1.2em;
   text-shadow: 0.3px 0 #463107;
@@ -571,7 +390,7 @@ canvas {
   display: none;
 }
 
-#info {
+#feedback {
   background-color: #f5efe7;
   border: 2px solid #675640;
   color: #675640;
@@ -589,7 +408,7 @@ canvas {
   right: 3%;
 }
 
-#info:hover {
+#feedback:hover {
   color: #c57702;
   border: 2px solid #c57702;
   transition: 0.5s;
@@ -654,3 +473,183 @@ canvas {
   text-align: center;
 }
 
+@media screen and (max-width: 412px) {
+  body * {
+    display: none !important;
+  }
+
+  body::before {
+    content: "Your screen is too narrow. \A \A Make the window wider or rotate your device to continue using the generator.";
+    display: block;
+    white-space: pre-wrap;
+    width: 100%;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 1.5em;
+  }
+}
+/* MOBILE */
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 7.2vw !important;
+    margin-top: 2% !important;
+  }
+
+  h2 {
+    font-size: 1.8em;
+  }
+
+  div#preview {
+    display: block;
+  }
+
+  div.expand::before {
+    width: calc(100vw - 60px);
+  }
+
+  div#image {
+    margin-bottom: 0px;
+  }
+
+  div#image-container {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+  }
+
+  div#buttons {
+    width: auto;
+    flex: 1;
+    align-items: center;
+    height: fit-content;
+  }
+
+  div#buttons button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  div#image {
+    --length: min(45vw, 720px, 60vh);
+    width: var(--length);
+    height: var(--length);
+  }
+
+  #image img {
+    width: var(--length);
+    height: var(--length);
+  }
+
+  .sticky {
+    position: sticky;
+    top: 0px;
+    background-color: #f5efe7;
+    padding: 2.5% 0 0.5% 0;
+    z-index: 1;
+  }
+
+  button.heading {
+    height: 57px;
+    margin-bottom: 1.5% !important;
+  }
+
+  .option {
+    padding: 9px 25px !important;
+  }
+
+  #random,
+  #download {
+    background-color: #675640;
+  }
+}
+
+/*TABLET*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  h1 {
+    font-size: 4em;
+  }
+
+  h2 {
+    font-size: 2.2em;
+  }
+
+  #options {
+    overflow-y: auto;
+    display: flex;
+    position: relative;
+    height: fit-content;
+    max-height: 60vh;
+    width: 50vw;
+    background-color: rgba(235, 229, 221, 1);
+    box-shadow: inset 1px 1px 1px 1px #c7bfb38c;
+  }
+
+  .expand::before {
+    right: 10% !important;
+  }
+
+  #random,
+  #download {
+    background-color: #3e2627;
+  }
+
+  button.heading {
+    height: 56px;
+    margin-bottom: 1% !important;
+  }
+
+  .option {
+    padding: 7px 23px !important;
+  }
+}
+
+/*DESKTOP*/
+@media screen and (min-width: 1024px) {
+  body {
+    padding: 1% 5% !important;
+    max-height: 100vh;
+    overflow: auto;
+  }
+
+  h1 {
+    font-size: 4em;
+  }
+
+  h2 {
+    font-size: 2.5em;
+  }
+
+  #options {
+    overflow-y: auto;
+    display: flex;
+    position: relative;
+    height: fit-content;
+    max-height: 60vh;
+    width: 50vw;
+    background-color: rgba(235, 229, 221, 1);
+    box-shadow: inset 1px 1px 1px 1px #c7bfb38c;
+  }
+
+  .expand {
+    max-height: none;
+  }
+
+  .heading::before {
+    right: 5% !important;
+  }
+
+  #image-container {
+    width: max(26vw, 100px) !important;
+  }
+
+  #random,
+  #download {
+    background-color: #5a4436;
+  }
+
+  button.heading {
+    height: 55px;
+  }
+}
